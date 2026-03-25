@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Fi — Features, Fees, Risks &amp; Network Fit Guide</title>
+  <meta name="description" content="Space Fi explained: learn its features, trading tools, fees, supported networks, and core risks so you can judge whether it fits your DeFi strategy.">
+  <link rel="canonical" href="https://spacefi.github.io/">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta property="og:title" content="Space Fi — Features, Fees, Risks &amp; Network Fit Guide">
+  <meta property="og:description" content="Space Fi explained: learn its features, trading tools, fees, supported networks, and core risks so you can judge whether it fits your DeFi strategy.">
+  <meta property="og:url" content="https://spacefi.github.io/">
+  <meta property="og:type" content="article">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": "Space Fi — Features, Fees, Risks & Network Fit Guide", "description": "Space Fi explained: learn its features, trading tools, fees, supported networks, and core risks so you can judge whether it fits your DeFi strategy.", "url": "https://spacefi.github.io/", "inLanguage": "en"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://"}, {"@type": "ListItem", "position": 2, "name": "Space Fi — Features, Fees, Risks & Network Fit Guide"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Space Fi used for?", "acceptedAnswer": {"@type": "Answer", "text": "Space Fi is used for on-chain token swaps, providing liquidity, and earning rewards through DeFi features like farming or staking. It operates as a decentralized finance platform, so users connect a crypto wallet and interact directly with smart contracts instead of a centralized exchange account."}}, {"@type": "Question", "name": "Is Space Fi a decentralized exchange?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Space Fi functions as a decentralized exchange that uses liquidity pools and smart contracts rather than a centralized order book. That means users keep custody of assets in their own wallet, but they also take on more responsibility for approvals, network selection, and transaction safety."}}, {"@type": "Question", "name": "Does Space Fi work on zkSync Era and Evmos?", "acceptedAnswer": {"@type": "Answer", "text": "Space Fi is associated with both zkSync Era and Evmos in its market positioning. In practice, you should verify the current network support, token availability, and interface details before transacting, because chain-specific functionality can change over time."}}, {"@type": "Question", "name": "What fees should I expect on Space Fi?", "acceptedAnswer": {"@type": "Answer", "text": "Expect visible swap fees plus network fees, and possibly slippage costs if liquidity is thin. If you provide liquidity, your real result also depends on fee income versus impermanent loss, not just the displayed farm APR."}}, {"@type": "Question", "name": "Is Space Fi safe to use?", "acceptedAnswer": {"@type": "Answer", "text": "It can be used responsibly, but it carries normal DeFi risks: smart-contract exposure, volatile assets, phishing, and execution mistakes. The SEC’s <a href=\"https://www.sec.gov/investor-alerts-and-bulletins\">investor alerts and bulletins</a> are a useful reminder that digital asset markets can involve significant risk and limited protections."}}, {"@type": "Question", "name": "How do I decide whether Space Fi is worth using?", "acceptedAnswer": {"@type": "Answer", "text": "Start with your actual goal. If you need a chain-specific swap or liquidity opportunity on zkSync Era or Evmos, Space Fi may fit. If you mainly want the deepest markets for major tokens, compare it directly against larger DEX alternatives before committing capital."}}]}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ═══ BASE THEME — Component Framework ═══ */
+/* All components use these CSS variables. */
+/* Theme presets override specific values.  */
+/* Assembler injects --primary from AI.     */
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* ── CTA fallback ── */
+  --cta-bg: linear-gradient(135deg, #6366f1, #4f46e5);
+  --cta-text: #fff;
+  --cta-glow: rgba(99,102,241,0.25);
+
+  /* ── Shadows (fallback — presets may override) ── */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.3);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.4);
+
+  /* ── Radius ── */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* ── Typography (sizing only — fonts set by preset + assembler) ── */
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-size: 17px;
+  --line-height: 1.7;
+
+  /* ── Layout ── */
+  --content-width: 760px;
+  --page-width: 1100px;
+  --section-gap: 56px;
+  --container-padding: 24px;
+}
+
+/* ── Base Typography ── */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  line-height: 1.25;
+  color: var(--text);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: 16px; }
+h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; margin-bottom: 10px; }
+h4 { font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
+
+p { margin-bottom: 1em; color: var(--text-2); }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--primary-hover); }
+
+strong { color: var(--text); font-weight: 600; }
+
+ul, ol { padding-left: 1.5em; margin-bottom: 1em; color: var(--text-2); }
+li { margin-bottom: 0.4em; }
+li::marker { color: var(--primary); }
+
+/* ── Layout Containers ── */
+.page-wrapper {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Full-width wrapper for hero, CTA sections */
+.full-width {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+main {
+  padding: var(--section-gap) 0;
+}
+
+main > section,
+main > .component {
+  margin-bottom: var(--section-gap);
+}
+
+/* ── Card Base ── */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  transition: all 0.25s ease;
+  position: relative;
+}
+.card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--primary-glow);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2), 0 0 0 1px var(--primary-glow);
+}
+.card h4 { margin-bottom: 8px; }
+.card .highlight {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 12px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Card Grid ── */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* ── CTA Button ── */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: var(--cta-bg);
+  color: var(--cta-text);
+  font-weight: 600;
+  font-size: 1.05rem;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 20px var(--cta-glow);
+  letter-spacing: 0.02em;
+}
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px var(--cta-glow), 0 0 0 2px var(--primary-glow);
+  color: var(--cta-text);
+}
+
+/* ── Table Base ── */
+.table-wrap {
+  overflow-x: auto;
+  margin: 20px 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+.table-wrap table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.table-wrap th {
+  background: var(--bg-subtle);
+  color: var(--text);
+  font-weight: 600;
+  text-align: left;
+  padding: 14px 18px;
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+}
+.table-wrap td {
+  padding: 14px 18px;
+  color: var(--text-2);
+  border-bottom: 1px solid var(--border);
+}
+.table-wrap tr:last-child td { border-bottom: none; }
+.table-wrap tr:hover td { background: var(--bg-card-hover); }
+.table-wrap tr:nth-child(even) td { background: var(--bg-subtle); }
+.table-wrap tr:first-child td { color: var(--primary); font-weight: 500; }
+
+/* ── FAQ Accordion ── */
+details {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+details:hover { border-color: var(--border-hover); }
+details[open] { border-color: var(--primary-glow); }
+details summary {
+  padding: 18px 22px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--bg-card);
+  transition: background 0.2s, color 0.2s;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+details summary::-webkit-details-marker { display: none; }
+details summary::after {
+  content: '+';
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  transition: transform 0.3s, color 0.2s;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+details[open] summary::after { content: '\2212'; color: var(--primary); }
+details[open] summary { border-bottom: 1px solid var(--border); color: var(--primary); }
+details > div, details > p {
+  padding: 18px 22px;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  :root {
+    --font-size: 16px;
+    --section-gap: 36px;
+    --container-padding: 16px;
+  }
+  .card-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  :root { --container-padding: 12px; }
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.35rem; }
+}
+
+/* ── Utility ── */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ── Scroll Progress Bar ── */
+.progress-bar {
+  position: fixed; top: 0; left: 0;
+  height: 3px; background: var(--primary);
+  z-index: 9999; transition: width 0.1s;
+  box-shadow: 0 0 8px var(--primary-glow);
+}
+
+/* ── Back to Top ── */
+.back-top {
+  position: fixed; bottom: 24px; right: 24px;
+  width: 40px; height: 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted);
+  cursor: pointer;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, background 0.2s;
+  z-index: 100;
+}
+.back-top.visible { opacity: 1; visibility: visible; }
+.back-top:hover { background: var(--bg-card-hover); color: var(--primary); }
+
+/* ── Scroll Animations ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Keyframes ── */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 var(--primary-glow); }
+  50% { box-shadow: 0 0 0 8px transparent; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ── Decorative ── */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 0;
+  border: none;
+}
+
+/* ── Visual Separator (between major sections) ── */
+.visual-sep {
+  text-align: center;
+  padding: 8px 0;
+  color: var(--text-muted);
+  font-size: 0.6rem;
+  letter-spacing: 1em;
+  opacity: 0.4;
+}
+.visual-sep::before { content: '\2022 \2022 \2022'; }
+
+/* ── Icon Circle ── */
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.icon-circle--sm { width: 32px; height: 32px; font-size: 0.85rem; }
+.icon-circle--lg { width: 48px; height: 48px; font-size: 1.15rem; }
+
+/* ── Stat Row ── */
+.stat-row {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.stat-item {
+  text-align: center;
+}
+.stat-value {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.2;
+}
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ── Noise texture overlay ── */
+.noise-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ═══════════════════════════════════════════════════ */
+/* ═══ DESIGN STYLE VARIANTS                      ═══ */
+/* ═══════════════════════════════════════════════════ */
+
+/* ── Card Styles ── */
+.card--bordered {
+  border: 1px solid var(--border);
+  background: transparent;
+  box-shadow: none;
+}
+.card--shadow {
+  border: none;
+  box-shadow: var(--shadow-md);
+  background: var(--bg-card);
+}
+.card--glass {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: none;
+}
+.card--flat {
+  background: var(--bg-card);
+  border: none;
+  box-shadow: none;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Background Textures ── */
+.page--noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-blend-mode: overlay;
+}
+.page--gradient-mesh::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(var(--primary-rgb, 99,102,241), 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(var(--primary-rgb, 99,102,241), 0.04) 0%, transparent 40%),
+    radial-gradient(ellipse at 60% 80%, rgba(var(--primary-rgb, 99,102,241), 0.03) 0%, transparent 45%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ── Section Dividers ── */
+.page--divider-line .content-section + .content-section {
+  border-top: 1px solid var(--border);
+  padding-top: var(--section-gap, 3rem);
+}
+.page--divider-gradient .content-section + .content-section::before {
+  content: '';
+  display: block;
+  height: 1px;
+  margin-bottom: var(--section-gap, 3rem);
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+.page--divider-none .content-section + .content-section {
+  border-top: none;
+}
+
+/* ── Spacing Variants ── */
+.page--spacing-tight {
+  --section-gap: 2rem;
+  --content-gap: 1rem;
+}
+.page--spacing-tight .content-section { margin-bottom: 2rem; }
+.page--spacing-tight .content-section + .content-section { margin-top: 0; }
+
+.page--spacing-normal {
+  --section-gap: 3rem;
+  --content-gap: 1.5rem;
+}
+
+.page--spacing-airy {
+  --section-gap: 4.5rem;
+  --content-gap: 2rem;
+}
+.page--spacing-airy .content-section { margin-bottom: 4.5rem; }
+
+/* ── Animation Variants ── */
+.page--animate-none .fade-in {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+.page--animate-subtle .fade-in {
+  transition-duration: 0.4s;
+}
+.page--animate-dynamic .fade-in {
+  transition-duration: 0.6s;
+  transform: translateY(30px);
+}
+
+/* ── TOC Variants ── */
+.toc--sidebar {
+  position: sticky;
+  top: 80px;
+  float: right;
+  width: 220px;
+  margin-left: 2rem;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  font-size: 0.8rem;
+  scrollbar-width: thin;
+}
+@media (max-width: 1024px) {
+  .toc--sidebar {
+    float: none;
+    position: static;
+    width: 100%;
+    margin-left: 0;
+    max-height: none;
+  }
+}
+
+/* Theme: Dark Emerald — based on base-emerald.html */
+/* Green-tinted dark, emerald accent, professional */
+:root {
+  --bg: #0d1514;
+  --bg-2: #131e1c;
+  --bg-card: rgba(120,255,200,0.035);
+  --bg-card-hover: rgba(120,255,200,0.06);
+  --bg-subtle: rgba(120,255,200,0.02);
+  --primary: #34d399;
+  --primary-hover: #10b981;
+  --primary-dim: #059669;
+  --primary-glow: rgba(52,211,153,0.12);
+  --primary-light: rgba(52,211,153,0.08);
+  --cta-bg: linear-gradient(135deg, #34d399, #10b981);
+  --cta-text: #fff;
+  --cta-glow: rgba(52,211,153,0.25);
+  --text: #e0f2ee;
+  --text-2: #94b8ad;
+  --text-muted: #5f7d73;
+  --border: rgba(120,255,200,0.07);
+  --border-hover: rgba(120,255,200,0.12);
+  --content-width: 720px;
+  --font-heading: 'DM Sans', -apple-system, sans-serif;
+  --font-body: 'Source Sans 3', -apple-system, sans-serif;
+}
+
+/* ── Footer ── */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 36px 0;
+  margin-top: var(--section-gap);
+}
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+.footer-copy { margin: 0; }
+.footer-links {
+  display: flex;
+  gap: 18px;
+}
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+  font-size: 0.8rem;
+}
+.footer-links a:hover { color: var(--text-2); }
+.footer-updated {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0;
+  opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+  .footer-inner { flex-direction: column; text-align: center; }
+}
+/* ── Navigation ── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+.nav-brand {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav-links a {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-2);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s, background 0.2s;
+}
+.nav-links a:hover {
+  color: var(--text);
+  background: var(--bg-card);
+}
+.nav-links a.cta-pill {
+  background: var(--primary);
+  color: #fff;
+  margin-left: 8px;
+}
+.nav-links a.cta-pill:hover {
+  background: var(--primary-hover);
+}
+
+/* ── More dropdown ── */
+.nav-more {
+  position: relative;
+}
+.nav-more-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s, background 0.2s;
+}
+.nav-more-btn:hover {
+  color: var(--text);
+  background: var(--bg-card);
+}
+.nav-more-arrow {
+  font-size: 0.65rem;
+  transition: transform 0.2s;
+}
+.nav-more.open .nav-more-arrow {
+  transform: rotate(180deg);
+}
+.nav-more-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 200px;
+  background: var(--bg-2, var(--bg));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md, 8px);
+  padding: 6px;
+  box-shadow: var(--shadow-md);
+  flex-direction: column;
+  z-index: 200;
+}
+.nav-more.open .nav-more-dropdown {
+  display: flex;
+}
+.nav-more-dropdown a {
+  padding: 8px 14px;
+  border-radius: var(--radius-sm, 4px);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-2);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s, background 0.15s;
+}
+.nav-more-dropdown a:hover {
+  color: var(--text);
+  background: var(--bg-card);
+}
+
+/* ── Mobile nav ── */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.nav-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text-2);
+  transition: transform 0.2s;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px;
+  }
+  .nav-links.open { display: flex; }
+  .nav-more-btn { display: none; }
+  .nav-more-dropdown {
+    display: flex;
+    position: static;
+    background: none;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    min-width: auto;
+  }
+}
+
+/* ── Nav behavior modifiers ── */
+.nav--auto-hide {
+  transition: transform 0.3s ease;
+}
+.nav--auto-hide.nav--hidden {
+  transform: translateY(-100%);
+}
+.nav--transparent {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom-color: transparent;
+  transition: background 0.3s, border-color 0.3s;
+}
+.nav--transparent.nav--scrolled {
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom-color: var(--border);
+}
+
+/* ── Price Ticker ── */
+.ticker-bar {
+  background: color-mix(in srgb, var(--bg) 95%, transparent);
+  border-top: 1px solid var(--border);
+  padding: 8px 0;
+  font-size: 0.75rem;
+  font-family: var(--font-body);
+}
+.ticker-inner {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.ticker-inner::-webkit-scrollbar { display: none; }
+.ticker-items {
+  display: flex;
+  gap: 28px;
+  white-space: nowrap;
+  align-items: center;
+}
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-2);
+}
+.ticker-item b {
+  color: var(--text);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+}
+.ticker-up { color: #10b981; font-weight: 500; }
+.ticker-down { color: #ef4444; font-weight: 500; }
+.ticker-loading {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ── Content Sections ── */
+.content-section {
+  scroll-margin-top: 72px;
+}
+.content-section h2 {
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+  position: relative;
+}
+.content-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 1px;
+}
+.content-section h3 {
+  margin-top: 32px;
+  padding-top: 8px;
+}
+
+/* ── Capsule (featured snippet bait) ── */
+.capsule {
+  background: var(--primary-light);
+  border-left: 3px solid var(--primary);
+  padding: 16px 20px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-bottom: 24px;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* ── Evidence block ── */
+.evidence {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 18px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: var(--text-2);
+}
+.evidence::before {
+  content: '\25C6';
+  color: var(--primary);
+  font-size: 0.7rem;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+/* ── Subsection ── */
+.subsection {
+  margin-top: 28px;
+}
+.subsection h3 {
+  margin-top: 0;
+}
+
+/* ── Cards variant ── */
+.section--cards .card-grid {
+  margin-top: 24px;
+}
+.section--cards .card h4 {
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.section--cards .card p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: var(--text-2);
+}
+
+/* ── Steps variant ── */
+.steps {
+  counter-reset: step;
+  margin-top: 24px;
+  position: relative;
+  padding-left: 28px;
+}
+/* Connecting line */
+.steps::before {
+  content: '';
+  position: absolute;
+  left: 17px;
+  top: 18px;
+  bottom: 18px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary), var(--border));
+  border-radius: 1px;
+}
+.step {
+  counter-increment: step;
+  display: flex;
+  gap: 16px;
+  padding: 22px 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  position: relative;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.step:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-sm);
+}
+.step::before {
+  content: counter(step);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  height: 38px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--border);
+}
+.step-content h4 { margin-bottom: 8px; }
+.step-content p { font-size: 0.9rem; margin: 0; color: var(--text-2); }
+/* ── CTA Section (bottom) ── */
+.cta-section {
+  text-align: center;
+  padding: 64px 40px;
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--primary-light) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  margin-top: var(--section-gap);
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-inner {
+  position: relative;
+  z-index: 1;
+}
+.cta-inner h2 {
+  border-bottom: none;
+  margin-bottom: 14px;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+}
+.cta-inner h2::after { display: none; }
+.cta-inner p {
+  max-width: 520px;
+  margin: 0 auto 28px;
+  color: var(--text-2);
+  font-size: 1.05rem;
+}
+
+/* ── Inline CTA (between sections) ── */
+.cta-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 28px;
+  background: var(--primary-light);
+  border: 1px solid color-mix(in srgb, var(--primary) 25%, transparent);
+  border-radius: var(--radius-md);
+  margin: 36px 0;
+  transition: border-color 0.2s;
+}
+.cta-inline:hover {
+  border-color: color-mix(in srgb, var(--primary) 40%, transparent);
+}
+.cta-inline p {
+  margin: 0;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 1rem;
+}
+.cta-inline .cta-button {
+  white-space: nowrap;
+  padding: 12px 24px;
+  font-size: 0.9rem;
+}
+
+/* ── Sticky CTA Bar ── */
+.cta-sticky {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 90;
+  padding: 14px 24px;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+.cta-sticky.visible {
+  transform: translateY(0);
+}
+.cta-sticky p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-2);
+}
+
+@media (max-width: 600px) {
+  .cta-section { padding: 40px 24px; }
+  .cta-inline {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+/* ── Pros & Cons ── */
+.pros-cons-section { scroll-margin-top: 72px; }
+.pros-cons-section h2::after { display: none; }
+
+.pros-cons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+.pros-col, .cons-col {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.pros-col::before, .cons-col::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+.pros-col::before { background: linear-gradient(90deg, #10b981, #34d399); }
+.cons-col::before { background: linear-gradient(90deg, #f43f5e, #fb7185); }
+
+.pros-heading, .cons-heading {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pros-heading { color: #10b981; }
+.cons-heading { color: #f43f5e; }
+.pros-heading::before { content: '\2713'; }
+.cons-heading::before { content: '\2717'; }
+
+.pros-list, .cons-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pros-list li, .cons-list li {
+  padding: 8px 0 8px 24px;
+  position: relative;
+  color: var(--text-2);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--border);
+}
+.pros-list li:last-child, .cons-list li:last-child { border-bottom: none; }
+.pros-list li::before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.cons-list li::before {
+  content: '\2013';
+  position: absolute;
+  left: 2px;
+  color: #f43f5e;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .pros-cons-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Comparison Cards variant ── */
+.comparison-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+.comp-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+.comp-card:first-child {
+  border-color: var(--primary-glow);
+  box-shadow: 0 0 0 1px var(--primary-glow);
+}
+.comp-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.comp-card h4 {
+  margin-bottom: 10px;
+}
+.comp-card .comp-rating {
+  display: inline-block;
+  padding: 6px 16px;
+  background: var(--primary-light);
+  color: var(--primary);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 14px;
+}
+.comp-card .comp-details {
+  font-size: 0.85rem;
+  color: var(--text-2);
+  text-align: left;
+}
+.comp-card .comp-details dt {
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 10px;
+}
+/* ═══ HERO — Premium ═══ */
+.hero {
+  text-align: center;
+  padding: 100px var(--container-padding) 72px;
+  position: relative;
+  overflow: hidden;
+  max-width: var(--page-width);
+  margin: 0 auto;
+}
+
+/* Radial glow */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 500px;
+  background: radial-gradient(ellipse at center, var(--primary-glow) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* Bottom separator */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  z-index: 1;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Badge */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-2);
+  margin-bottom: 28px;
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(8px);
+}
+.hero-badge .dot {
+  width: 7px;
+  height: 7px;
+  background: var(--primary);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--primary-glow);
+  animation: pulse-glow 2.5s ease infinite;
+}
+
+.hero h1 {
+  margin-bottom: 20px;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-2);
+  max-width: 580px;
+  margin: 0 auto 36px;
+  line-height: 1.65;
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ═══ GRADIENT ═══ */
+.hero--gradient {
+  padding: 120px var(--container-padding) 88px;
+  background: linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 40%, var(--bg) 100%);
+}
+.hero--gradient::before {
+  width: 1100px;
+  height: 600px;
+  opacity: 0.45;
+}
+.hero--gradient h1 {
+  background: linear-gradient(135deg, var(--text) 30%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ═══ SPLIT ═══ */
+.hero--split {
+  text-align: left;
+  padding: 80px var(--container-padding) 64px;
+}
+.hero--split .hero-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: var(--page-width);
+}
+.hero--split .hero-subtitle {
+  margin: 0 0 32px;
+  max-width: none;
+}
+.hero--split .hero-cta { justify-content: flex-start; }
+.hero-visual {
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--primary-light) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, var(--primary-glow) 100%);
+}
+
+/* ═══ MINIMAL ═══ */
+.hero--minimal {
+  padding: 56px var(--container-padding) 40px;
+}
+.hero--minimal::before { display: none; }
+.hero--minimal::after { opacity: 0.5; }
+.hero--minimal .hero-subtitle { margin-bottom: 0; }
+.hero--minimal .hero-inner { max-width: 640px; }
+
+/* ═══ Responsive ═══ */
+@media (max-width: 768px) {
+  .hero { padding: 72px var(--container-padding) 48px; }
+  .hero-subtitle { font-size: 1.05rem; }
+  .hero--gradient { padding: 88px var(--container-padding) 56px; }
+  .hero--split .hero-inner { grid-template-columns: 1fr; text-align: center; }
+  .hero--split .hero-cta { justify-content: center; }
+  .hero-visual { display: none; }
+}
+/* ── FAQ Section ── */
+.faq-section { scroll-margin-top: 72px; }
+.faq-section h2 {
+  margin-bottom: 24px;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── FAQ Grid variant ── */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+.faq-grid .faq-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  transition: border-color 0.2s;
+}
+.faq-grid .faq-card:hover {
+  border-color: var(--border-hover);
+}
+.faq-grid .faq-card h4 {
+  color: var(--text);
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+.faq-grid .faq-card p {
+  color: var(--text-2);
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Table of Contents ── */
+.toc {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  margin-bottom: var(--section-gap);
+}
+.toc-title {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.toc-list {
+  padding-left: 0;
+  margin: 0;
+  counter-reset: toc;
+  list-style: none;
+}
+.toc-list li {
+  counter-increment: toc;
+  margin-bottom: 4px;
+}
+.toc-list li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  color: var(--text-2);
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: var(--radius-sm);
+  transition: color 0.2s, background 0.2s;
+}
+.toc-list li a:hover {
+  color: var(--primary);
+  background: var(--primary-light);
+}
+.toc-list li a::before {
+  content: counter(toc, decimal-leading-zero);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  min-width: 24px;
+}
+
+@media (max-width: 600px) {
+  .faq-grid { grid-template-columns: 1fr; }
+}
+/* ── Key Takeaway / Blockquote ── */
+.key-takeaway {
+  padding: 24px 28px;
+  background: var(--bg-card);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin: 28px 0;
+  position: relative;
+}
+.key-takeaway::before {
+  content: '\201C';
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-size: 3rem;
+  color: var(--primary-glow);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+.key-takeaway p {
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.65;
+  padding-left: 8px;
+}
+
+/* ── Definition Box ── */
+.definition-box {
+  padding: 22px 26px;
+  background: var(--primary-light);
+  border: 1px solid color-mix(in srgb, var(--primary) 25%, transparent);
+  border-radius: var(--radius-md);
+  margin-bottom: 28px;
+}
+.definition-box p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.7;
+}
+.definition-box strong {
+  color: var(--primary);
+}
+/* ── Trust Section ── */
+.trust-section { scroll-margin-top: 72px; }
+.trust-points {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+.trust-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--primary);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: 0.9rem;
+  color: var(--text-2);
+  line-height: 1.6;
+  transition: border-color 0.2s;
+}
+.trust-point:hover {
+  border-left-color: var(--primary-hover);
+}
+.trust-point::before {
+  content: '\2713';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.75rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── Disclaimer ── */
+.disclaimer-block {
+  padding: 18px 22px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-top: 28px;
+}
+.disclaimer-block p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.65;
+}
+.disclaimer-block strong {
+  color: var(--text-2);
+}
+
+:root {
+  --primary: #F4B942;
+  --primary-hover: #cf9d38;
+  --primary-dim: #aa812e;
+  --primary-glow: rgba(244,185,66,0.12);
+  --primary-light: rgba(244,185,66,0.08);
+  --cta-bg: linear-gradient(135deg, #F4B942, #cf9d38);
+  --cta-glow: rgba(244,185,66,0.25);
+}
+:root { --font-heading: 'DM Sans', -apple-system, sans-serif; --font-body: 'Source Sans 3', -apple-system, sans-serif; }
+
+  </style>
+</head>
+<body class="">
+  <div class="progress-bar" id="progress"></div>
+  
+  <nav class="nav">
+  <div class="nav-inner page-wrapper">
+    <a href="/" class="nav-brand">Space Fi</a>
+    <div class="nav-links" id="nav-links">
+      <a href="#what-space-fi-is-and-who-it-suits">What Space Fi</a>
+      <a href="#how-space-fi-works-on-chain">How Space Fi</a>
+      <a href="#which-networks-shape-the-space-fi-experience">Which networks shape</a>
+      <div class="nav-more">
+        <button class="nav-more-btn" id="nav-more-btn">More <span class="nav-more-arrow">&#9662;</span></button>
+        <div class="nav-more-dropdown" id="nav-more-dropdown">
+          <a href="#the-real-cost-of-using-space-fi">The real cost</a>
+        <a href="#what-to-watch-out-for-with-space-fi">What to watch</a>
+        <a href="#when-space-fi-makes-more-sense-than-larger-dexs">When Space Fi</a>
+        <a href="#how-to-evaluate-space-fi-before-you-commit-capital">How to evaluate</a>
+        <a href="#faq">FAQ</a>
+        </div>
+      </div>
+      <a href="/space-fi/" class="cta-pill">Get Started</a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<section class="hero hero--gradient noise-overlay">
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="dot"></span> Trusted Lending Guide</div>
+    <h1>Space Fi: what it does, how it works, and whether it’s worth using</h1>
+    <p class="hero-subtitle">Space Fi is a decentralized exchange built around token swaps, liquidity pools, and yield features across zkSync Era and Evmos. This guide focuses on the decisions users actually face: what you can do, where fees show up, and when larger DEX alternatives may be the better fit.</p>
+    <div class="hero-cta"><a href="/space-fi/" class="cta-button">Explore Space Fi &rarr;</a></div>
+    <div class="stat-row"><div class="stat-item"><div class="stat-value">2</div><div class="stat-label">core networks highlighted</div></div><div class="stat-item"><div class="stat-value">3</div><div class="stat-label">main user jobs: swap, provide liquidity, earn</div></div></div>
+  </div>
+</section>
+<main class="page-wrapper">
+<nav class="toc" aria-label="Table of Contents">
+  <h2 class="toc-title">Contents</h2>
+  <ol class="toc-list">
+    <li><a href="#what-space-fi-is-and-who-it-suits">What Space Fi is and who it suits</a></li>
+    <li><a href="#how-space-fi-works-on-chain">How Space Fi works on-chain</a></li>
+    <li><a href="#which-networks-shape-the-space-fi-experience">Which networks shape the Space Fi experience</a></li>
+    <li><a href="#the-real-cost-of-using-space-fi">The real cost of using Space Fi</a></li>
+    <li><a href="#what-to-watch-out-for-with-space-fi">What to watch out for with Space Fi</a></li>
+    <li><a href="#when-space-fi-makes-more-sense-than-larger-dexs">When Space Fi makes more sense than larger DEXs</a></li>
+    <li><a href="#how-to-evaluate-space-fi-before-you-commit-capital">How to evaluate Space Fi before you commit capital</a></li>
+    <li><a href="#comparison">Comparison</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ol>
+</nav>
+
+<section class="content-section" id="what-space-fi-is-and-who-it-suits">
+  <h2>What Space Fi is and who it suits</h2>
+  <p class="capsule">Space Fi is a DeFi platform centered on swaps, liquidity provision, and reward strategies on zkSync Era and Evmos. It suits users who want on-chain trading and yield tools in emerging ecosystems, but it requires comfort with wallet-based execution and smart-contract risk.</p>
+  <p class="evidence">Space Fi is commonly discussed in the context of zkSync Era and Evmos, which makes network selection a first-order factor rather than a minor setup detail.</p>
+  <p><strong>Space Fi</strong> is best understood as a multi-feature <strong>decentralized exchange</strong> rather than a simple swap page. Users connect a wallet, trade through an <strong>automated market maker</strong>, add assets to <strong>liquidity pools</strong>, and may earn through <strong>yield farming</strong> or staking-style reward programs depending on what is live on the platform.</p><p>That positioning matters because the real comparison is not just "Can it swap tokens?" but "Why use Space Fi instead of a larger DEX?" The answer usually comes down to network access, available token pairs, incentives, and whether you specifically want exposure to the zkSync Era or Evmos ecosystem. For a broader primer on how these systems work, Ethereum’s official <a href="https://ethereum.org/en/defi/"><a href="https://ethereum.org/en/defi/" target="_blank" rel="noopener noreferrer">DeFi explainer</a></a> gives the right baseline.</p><ul><li><strong>Best for:</strong> users already active in a cross-chain ecosystem who want on-chain trading and LP opportunities</li><li><strong>Less ideal for:</strong> traders who need deepest liquidity, the lowest slippage on majors, or the broadest market coverage</li><li><strong>Key decision points:</strong> supported assets, swap fees, TVL metrics, and incentive quality</li></ul><p> </p>
+  <div class="subsection"><h3>What you can actually do on the platform</h3><p>Most users come to the Space Fi platform for three tasks: <strong>token swaps</strong>, liquidity provision, and reward seeking. In practice, that means choosing token pairs, setting slippage tolerance, approving assets in a wallet, and then tracking returns against gas costs and price movement.</p></div>
+<div class="subsection"><h3>Why the network matters more than the brand name</h3><p>A DEX can look similar across chains while behaving very differently in execution quality. Liquidity depth, wallet support, and active user demand on zkSync Era versus Evmos can materially change the experience, especially for less liquid assets.</p></div>
+
+</section>
+
+<section class="content-section" id="how-space-fi-works-on-chain">
+  <h2>How Space Fi works on-chain</h2>
+  <p class="capsule">Space Fi routes trades through smart contracts instead of a centralized order book. Users connect a wallet, approve a token, submit a swap or liquidity action, and receive assets or LP tokens directly on-chain.</p>
+  <div class="steps">
+    <div class="step"><div class="step-content"><h4>Connect a supported wallet</h4><p>Use a wallet compatible with the target chain, then confirm you are on zkSync Era or Evmos before doing anything else.</p></div></div>
+<div class="step"><div class="step-content"><h4>Choose the action</h4><p>Select whether you want a direct swap, a liquidity deposit, or a reward-oriented strategy such as farming.</p></div></div>
+<div class="step"><div class="step-content"><h4>Review execution details</h4><p>Check token pairs, quoted output, slippage tolerance, network fees, and whether an approval transaction is required first.</p></div></div>
+<div class="step"><div class="step-content"><h4>Confirm and monitor</h4><p>After the transaction settles, verify balances, LP position status, and any reward accrual in the interface or in your wallet.</p></div></div>
+
+  </div>
+</section>
+
+<section class="content-section section--cards" id="which-networks-shape-the-space-fi-experience">
+  <h2>Which networks shape the Space Fi experience</h2>
+  <p class="capsule">Network support is central to Space Fi because liquidity, token availability, and user demand vary by chain. zkSync Era matters for Ethereum-adjacent scaling, while Evmos matters for Cosmos-linked interoperability and ecosystem-specific assets.</p>
+  <div class="card-grid">
+    <div class="card"><h4>zkSync Era angle</h4><p>Useful for users who want Ethereum-adjacent on-chain trading with rollup-oriented infrastructure.</p><span class="highlight">Ethereum-linked context</span></div>
+<div class="card"><h4>Evmos angle</h4><p>Relevant when your assets, wallet flow, or strategy already extends into Cosmos-connected environments.</p><span class="highlight">Cross-chain context</span></div>
+<div class="card"><h4>Decision filter</h4><p>Check token availability, daily activity, and practical routing before assuming the same DEX experience across networks.</p><span class="highlight">Liquidity first</span></div>
+
+  </div>
+</section>
+
+<div class="cta-inline">
+  <p>If you are comparing DEXs by liquidity, fees, and network fit, line up Space Fi against your alternatives before you trade.</p>
+  <a href="/space-fi/" class="cta-button">Compare Space Fi Options &rarr;</a>
+</div>
+
+<section class="content-section" id="the-real-cost-of-using-space-fi">
+  <h2>The real cost of using Space Fi</h2>
+  <p class="capsule">The visible trading fee is only part of the cost. The bigger drivers can be slippage, price impact, gas, and impermanent loss if you provide liquidity instead of simply swapping.</p>
+  <p class="evidence">On smaller DEX pools, implicit costs often exceed the displayed swap fee, especially when token pairs are thinly traded.</p>
+  <p><strong>Space Fi protocol</strong> costs need to be separated into trading costs and <a href="https://www.investopedia.com/terms/l/liquidity.asp" target="_blank" rel="noopener noreferrer">liquidity</a> costs. Traders care about swap fees, gas, and slippage tolerance. Liquidity providers care about fee income, farm APR, and whether <strong>impermanent loss</strong> overwhelms rewards.</p><p>That distinction is where many user decisions go wrong. A pool can advertise attractive liquidity provider rewards while still delivering weak net results if token volatility is high or volume is too low. Investopedia’s pages on <a href="https://www.investopedia.com/terms/l/liquidity.asp">liquidity</a> and <a href="https://www.investopedia.com/terms/y/<a href="https://www.investopedia.com/terms/y/yield.asp" target="_blank" rel="noopener noreferrer">yield</a>.asp">yield</a> are useful references when you want to frame reward claims against actual market mechanics.</p><ul><li><strong>For swappers:</strong> focus on quote quality, slippage, and whether another DEX offers tighter execution</li><li><strong>For LPs:</strong> compare fee generation with impermanent loss risk, not just the displayed APR</li><li><strong>For both:</strong> low TVL metrics usually mean more execution friction on smaller token pairs</li></ul>
+  <div class="subsection"><h3>What traders should measure before swapping</h3><p>Look beyond the interface fee line. Check the quoted output against alternative venues, estimate price impact, and treat low-liquidity pairs as a warning sign rather than an opportunity by default.</p></div>
+<div class="subsection"><h3>What liquidity providers should measure before depositing</h3><p>APR by itself is not enough. You need expected volume, fee share, reward token quality, and a realistic view of how price divergence between paired assets could damage returns.</p></div>
+
+</section>
+
+<section class="content-section" id="what-to-watch-out-for-with-space-fi">
+  <h2>What to watch out for with Space Fi</h2>
+  <p class="capsule">The biggest Space Fi risks are smart-contract failure, thin liquidity, volatile incentive tokens, and user-side mistakes such as wrong network selection or bad slippage settings. These are normal DeFi risks, but they matter more on smaller ecosystems.</p>
+  <p class="evidence">Smaller-chain DeFi opportunities can offer higher incentive rates, but they usually come with higher liquidity and operational risk.</p>
+  <p><strong>DeFi protocol risks</strong> are the main reason to avoid treating Space Fi like a simple brokerage app. If you use the Space Fi platform, you are relying on audited smart contracts if available, wallet security, and the health of the chain ecosystem itself.</p><p>Risk also scales with complexity. A plain token swap has one risk profile. A liquidity position plus farm APR exposure plus governance token rewards is a different one entirely. The U.S. government’s <a href="https://www.investor.gov/introduction-investing/investing-basics/investment-products/cryptocurrency"><a href="https://www.investor.gov/introduction-investing/investing-basics/investment-products/cryptocurrency" target="_blank" rel="noopener noreferrer">cryptocurrency basics page</a></a> is a useful reminder that digital asset products can involve rapid losses, operational risk, and limited recourse.</p><ul><li><strong>Contract risk:</strong> bugs, exploits, or flawed reward logic</li><li><strong>Market risk:</strong> token volatility, thin depth, unstable incentive value</li><li><strong>User risk:</strong> bad approvals, phishing, incorrect wallet connection, wrong chain</li><li><strong>Strategy risk:</strong> chasing high yields without understanding where returns come from</li></ul><p></p>
+  <div class="subsection"><h3>Smart-contract and liquidity risks</h3><p>If a pool is shallow, large trades move price fast. If the contract design is flawed, users may face losses that cannot be reversed. Neither issue is hypothetical in DeFi, which is why protocol maturity matters.</p></div>
+<div class="subsection"><h3>Common user mistakes that cause avoidable losses</h3><p>The most common avoidable errors are approving the wrong token, trading on the wrong network, accepting excessive slippage, and interacting through a fake front end. These are basic mistakes, but they remain expensive ones.</p></div>
+
+</section>
+
+<section class="content-section section--cards" id="when-space-fi-makes-more-sense-than-larger-dexs">
+  <h2>When Space Fi makes more sense than larger DEXs</h2>
+  <p class="capsule">Space Fi is most compelling when you want exposure to specific zkSync Era or Evmos markets, not when you simply need the deepest possible liquidity. Larger DEXs usually win on majors; niche ecosystem DEXs can win on local access and incentives.</p>
+  <div class="card-grid">
+    <div class="card"><h4>Strong fit</h4><p>Users active on zkSync Era or Evmos who want ecosystem-native token swaps and local LP strategies.</p><span class="highlight">Network-specific use</span></div>
+<div class="card"><h4>Moderate fit</h4><p>Users comparing several DEXs and willing to test quote quality before each trade.</p><span class="highlight">Execution matters</span></div>
+<div class="card"><h4>Poor fit</h4><p>Users who want the deepest markets for majors with minimal operational complexity.</p><span class="highlight">Look larger</span></div>
+
+  </div>
+</section>
+
+<section class="content-section" id="how-to-evaluate-space-fi-before-you-commit-capital">
+  <h2>How to evaluate Space Fi before you commit capital</h2>
+  <p class="capsule">Before using Space Fi, verify the chain, inspect token-pair liquidity, compare swap quotes, and decide whether you are trading or seeking yield. A short pre-trade checklist reduces avoidable losses more than any headline APR ever will.</p>
+  <p class="evidence">A simple checklist often does more to improve outcomes than chasing the highest displayed reward rate.</p>
+  <p>The right evaluation process is boring by design, and that is exactly why it works. Before using <strong>Space Fi DEX</strong>, check whether the token pairs you want have credible liquidity, whether TVL metrics look healthy enough for your size, and whether the route beats alternatives once slippage and gas are included.</p><p>You should also separate speculation from utility. If you are there for a one-time swap, keep the task narrow. If you are there for yield farming or staking-style rewards, evaluate governance token emissions, reward sustainability, and exit liquidity. <a href="https://defillama.com/dexs"><a href="https://defillama.com/dexs" target="_blank" rel="noopener noreferrer">DeFiLlama’s DEX dashboard</a></a> is useful for broader market context when comparing venue scale.</p><ol><li>Confirm the correct chain and wallet connection.</li><li>Review liquidity depth for your target token pairs.</li><li>Compare quotes and slippage against alternatives.</li><li>Understand whether returns come from fees, emissions, or both.</li><li>Plan your exit before entering the position.</li></ol><p></p>
+  <div class="subsection"><h3>A practical pre-swap checklist</h3><p>For swaps, your checklist is chain, route, slippage, and total cost. The goal is not to optimize every basis point; it is to avoid preventable execution mistakes.</p></div>
+<div class="subsection"><h3>A practical pre-LP checklist</h3><p>For liquidity deposits, add one more layer: estimate how the position behaves if one asset materially outperforms the other. If you cannot explain that outcome, you are not ready for the deposit.</p></div>
+
+</section>
+
+<section class="content-section comparison-section" id="comparison">
+  <h2>Space Fi vs larger DEX alternatives</h2>
+  <p class="capsule">Space Fi can win when you need chain-specific access or incentives, but larger DEXs usually win on liquidity and execution for mainstream trades.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Decision factor</th><th>Space Fi</th><th>Larger DEX alternative</th><th>What it means for users</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Network focus</td><td>More ecosystem-specific, especially around zkSync Era and Evmos</td><td>Usually broader chain coverage or deeper concentration on major ecosystems</td><td>Space Fi can be better for local opportunities; larger DEXs often offer more optionality</td></tr>
+<tr><td>Liquidity depth</td><td>Can vary meaningfully by token pair and chain</td><td>Often stronger on major assets</td><td>Large trades and low-cap assets may face more slippage on Space Fi</td></tr>
+<tr><td>Reward opportunities</td><td>May offer local LP or farming incentives</td><td>Often more mature but sometimes less aggressive incentives</td><td>Higher displayed APR on Space Fi may come with higher risk</td></tr>
+<tr><td>Ease of evaluation</td><td>Requires careful review of pair depth, TVL metrics, and network conditions</td><td>Usually easier to benchmark due to larger market visibility</td><td>Smaller venues demand more user diligence</td></tr>
+
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="content-section faq-section" id="faq">
+  <h2>Frequently asked questions about Space Fi</h2>
+  <div class="faq-list">
+    <details><summary>What is Space Fi used for?</summary><div><p>Space Fi is used for on-chain token swaps, providing liquidity, and earning rewards through DeFi features like farming or staking. It operates as a decentralized finance platform, so users connect a crypto wallet and interact directly with smart contracts instead of a centralized exchange account.</p></div></details>
+<details><summary>Is Space Fi a decentralized exchange?</summary><div><p>Yes. Space Fi functions as a decentralized exchange that uses liquidity pools and smart contracts rather than a centralized order book. That means users keep custody of assets in their own wallet, but they also take on more responsibility for approvals, network selection, and transaction safety.</p></div></details>
+<details><summary>Does Space Fi work on zkSync Era and Evmos?</summary><div><p>Space Fi is associated with both zkSync Era and Evmos in its market positioning. In practice, you should verify the current network support, token availability, and interface details before transacting, because chain-specific functionality can change over time.</p></div></details>
+<details><summary>What fees should I expect on Space Fi?</summary><div><p>Expect visible swap fees plus network fees, and possibly slippage costs if liquidity is thin. If you provide liquidity, your real result also depends on fee income versus impermanent loss, not just the displayed farm APR.</p></div></details>
+<details><summary>Is Space Fi safe to use?</summary><div><p>It can be used responsibly, but it carries normal DeFi risks: smart-contract exposure, volatile assets, phishing, and execution mistakes. The SEC’s &lt;a href=&quot;https://www.sec.gov/investor-alerts-and-bulletins&quot;&gt;investor alerts and bulletins&lt;/a&gt; are a useful reminder that digital asset markets can involve significant risk and limited protections.</p></div></details>
+<details><summary>How do I decide whether Space Fi is worth using?</summary><div><p>Start with your actual goal. If you need a chain-specific swap or liquidity opportunity on zkSync Era or Evmos, Space Fi may fit. If you mainly want the deepest markets for major tokens, compare it directly against larger DEX alternatives before committing capital.</p></div></details>
+
+  </div>
+</section>
+
+<div class="disclaimer-block">
+  <p><strong>Disclaimer:</strong> This content is for informational purposes only and does not constitute investment, legal, or tax advice. DeFi protocols, token prices, and network conditions can change quickly. Always verify current platform details, review smart-contract and liquidity risks, and consider independent professional advice before committing capital.</p>
+</div>
+
+<section class="cta-section" id="cta">
+  <div class="cta-inner">
+    <h2>Ready to evaluate Space Fi with a clear checklist?</h2>
+    <p>Use the network, liquidity, and risk framework above before making your first swap or LP decision.</p>
+    <a href="/space-fi/" class="cta-button">Get Started with Space Fi &rarr;</a>
+  </div>
+</section>
+
+</main>
+<footer class="footer">
+  <div class="page-wrapper">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; Space Fi</p>
+      
+      <p class="footer-updated">Last updated: 2026-03-25</p>
+    </div>
+  </div>
+</footer>
+
+  <button class="back-top" id="btt" aria-label="Back to top">&uarr;</button>
+  <script>
+    /* Progress bar */
+    window.addEventListener('scroll',function(){var s=document.documentElement,t=s.scrollHeight-s.clientHeight;document.getElementById('progress').style.width=t?((s.scrollTop/t)*100)+'%':'0%'});
+    /* Back to top */
+    var btt=document.getElementById('btt');window.addEventListener('scroll',function(){btt.classList.toggle('visible',window.scrollY>400)});btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+    
+/* Nav toggle */
+var nt=document.getElementById('nav-toggle'),nl=document.getElementById('nav-links');
+if(nt&&nl){nt.addEventListener('click',function(){nl.classList.toggle('open')})}
+/* Nav More dropdown */
+var nm=document.getElementById('nav-more-btn'),nd=nm&&nm.closest('.nav-more');
+if(nm&&nd){nm.addEventListener('click',function(e){e.stopPropagation();nd.classList.toggle('open')});document.addEventListener('click',function(){nd.classList.remove('open')})}
+/* Nav auto-hide on scroll */
+var nav=document.querySelector('.nav--auto-hide');
+if(nav){var ls=0;window.addEventListener('scroll',function(){var c=window.scrollY;if(c>ls&&c>80){nav.classList.add('nav--hidden')}else{nav.classList.remove('nav--hidden')}ls=c})}
+/* Nav transparent until scroll */
+var tn=document.querySelector('.nav--transparent');
+if(tn){window.addEventListener('scroll',function(){tn.classList.toggle('nav--scrolled',window.scrollY>60)})}
+/* Sticky CTA show on scroll */
+var sc=document.querySelector('.cta-sticky');
+if(sc){window.addEventListener('scroll',function(){sc.classList.toggle('visible',window.scrollY>800)})}
+/* Scroll fade-in animations */
+var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}})},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.content-section,.card,.step,.faq-section,.cta-section,.trust-section,.comparison-section,.pros-cons-section,.toc,.pricing-section,.testimonials-section,.stats-bar').forEach(function(el){el.classList.add('fade-in');io.observe(el)});
+/* CoinGecko price ticker */
+var ticker=document.getElementById('price-ticker');
+if(ticker){var coins=['bitcoin','ethereum','matic-network','solana','binancecoin'];function updTicker(){fetch('https://api.coingecko.com/api/v3/simple/price?ids='+coins.join(',')+'&vs_currencies=usd&include_24hr_change=true').then(function(r){return r.json()}).then(function(d){var h='';coins.forEach(function(c){if(d[c]){var p=d[c].usd,ch=d[c].usd_24h_change||0,cl=ch>=0?'ticker-up':'ticker-down',nm=c.split('-')[0].toUpperCase();h+='<span class="ticker-item"><b>'+nm+'</b> $'+p.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})+' <span class="'+cl+'">'+(ch>=0?'+':'')+ch.toFixed(1)+'%</span></span>'}});document.getElementById('ticker-items').innerHTML=h}).catch(function(){})}updTicker();setInterval(updTicker,60000)}
+
+  </script>
+</body>
+</html>
